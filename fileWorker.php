@@ -48,7 +48,8 @@ class fileWorker
                 $form = new Form();
                 $form->category = $category_name;
                 $form->form_name = $product_dir_base_no_thumb;
-                $form->image_path = json_encode($images_path);
+                $form->form_file_path = $category_dir . DIRECTORY_SEPARATOR . $product_dir_base;
+                $form->images_path = json_encode($images_path);
                 $form->save(false);
 
                 $this->FIRST_COUNT--;
