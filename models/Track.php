@@ -1,5 +1,5 @@
 <?php
-require_once '\..\php-activerecord\ActiveRecord.php';
+require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'php-activerecord' . DIRECTORY_SEPARATOR . 'ActiveRecord.php');
 
 /**
  *

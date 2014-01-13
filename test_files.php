@@ -9,7 +9,7 @@
 
 
 <?php
-require 'models\Track.php';
+require 'models'.DIRECTORY_SEPARATOR.'Track.php';
 require 'Utf8.php';
 
 Config::getConfig();
