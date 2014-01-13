@@ -20,7 +20,7 @@ foreach ($tracks as $track) {
     if(strpos($track->file, '%') !== FALSE){
 
         $full_track_path = Track::$search_tracks_in . stripSpaces($track->composer->name) . DIRECTORY_SEPARATOR . stripSpaces($track->name_ascii) . '.mp3';
-        echo $full_track_path . "<br>";
+        echo "$track->id | $full_track_path<br>";
 
 //        $stream = file_get_contents($track->file);
 //        $bytes = file_put_contents($full_track_path, $stream);
