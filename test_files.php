@@ -21,10 +21,12 @@ foreach ($tracks as $track) {
     $full_track_path = Track::$search_tracks_in . stripSpaces($track->composer->name) . DIRECTORY_SEPARATOR . stripSpaces($track->name_ascii) . '.mp3';
 
     if(strpos($track->file, '%') !== FALSE && !is_file($full_track_path)){
+        echo "Trying download #$track->id " . "<br>";
+        flush();
         $stream = file_get_contents($track->file);
         $bytes = file_put_contents($full_track_path, $stream);
         echo "Downloaded #$track->id " . humanFileSize($bytes, 'MB') . " @ " . date("d.m.Y H:i:s" , time()) . "<br>";
-        flush();
+
     }
 //    $track->name_ascii = trim($track->name_ascii);
 //    $track->save();
