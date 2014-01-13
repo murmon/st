@@ -22,6 +22,7 @@ foreach ($tracks as $track) {
     $full_track_path = Track::$search_tracks_in . stripSpaces($track->composer->name) . DIRECTORY_SEPARATOR . stripSpaces($track->name_ascii) . '.mp3';
 
     if(!is_file($full_track_path)){
+        echo "$full_track_path<br>";
         $not_found_files++;
     }
 //    $track->name_ascii = trim($track->name_ascii);
