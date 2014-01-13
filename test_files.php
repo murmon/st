@@ -24,6 +24,7 @@ foreach ($tracks as $track) {
         $stream = file_get_contents($track->file);
         $bytes = file_put_contents($full_track_path, $stream);
         echo "Downloaded #$track->id " . humanFileSize($bytes, 'MB') . " @ " . date("d.m.Y H:i:s" , time()) . "<br>";
+        flush();
     }
 //    $track->name_ascii = trim($track->name_ascii);
 //    $track->save();
