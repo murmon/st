@@ -17,5 +17,5 @@ class Track extends ActiveRecord\Model
         array('composer', 'class_name' => 'Composer', 'foreign_key' => 'id_composer')
     );
 
-    public static $search_tracks_in = 'e:\projects\shopify\classical music\\';
+    public static $search_tracks_in = '/home/freespace/classicalmusic/';
 }
