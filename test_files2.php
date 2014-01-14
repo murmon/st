@@ -15,7 +15,14 @@ require 'Utf8.php';
 $dirs = array_filter(glob(Track::$search_tracks_in . '*'), 'is_dir');
 
 foreach ($dirs as $dir) {
-    echo $dir . "<br>";
+    $dir_basename = basename($dir);
+    $dir_ascii = \Patchwork\Utf8::toAscii($dir_basename);
+    if(rename($dir, $dir_ascii)){
+        echo $dir . " => $dir_ascii <br>";
+    } else {
+        echo $dir . " RENAME FAILED <br>";
+    }
+
 }
 
 function dirSize($directory) {
