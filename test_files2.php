@@ -12,6 +12,21 @@
 require 'models'.DIRECTORY_SEPARATOR.'Track.php';
 require 'Utf8.php';
 
+$dirs = array_filter(glob(Track::$search_tracks_in . '*'), 'is_dir');
+
+foreach ($dirs as $dir) {
+    echo $dir . "<br>";
+}
+
+function dirSize($directory) {
+    $size = 0;
+    foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory)) as $file){
+        $size+=$file->getSize();
+    }
+    return $size;
+}
+die();
+
 Config::getConfig();
 
 $tracks = Track::find('all'/*, array('conditions' => 'id = 1')*/);
